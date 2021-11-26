@@ -72,7 +72,7 @@ body{
 	width: 18px;
 	height: 18px;
 	left: -45px;
-	top: calc(50% - 10px);
+	top: calc(50% - 7px);
 	background: #d62b2e;
 	transform: rotate(45deg);
 }
@@ -106,6 +106,14 @@ body{
 	right: 0;
 }
 
+.wrapped_game {
+	position: relative;
+	background: no-repeat url(images/cards.png);
+	width: 515px;
+	height: 407px;
+	top: 42.5%;	
+	right: 0;
+}
 
 
 

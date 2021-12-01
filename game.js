@@ -31,11 +31,13 @@ function checkLevel () {
 	};
 }
 
-// функция появления и скрытия главного экрана
+// функция появления главного экрана
 
 function clearField () {
+	let removeWrapper = document.querySelector('.wrapper_active');
+	removeWrapper.classList.remove('wrapper_active');
 	gameField.style.display = 'none';
-	document.querySelector('.wrapper').style.display = 'block';
+	window.location.reload();
 }
 
 // создание карты (вместе с переворотом) и очистка поля после двойного нажатия на карту
@@ -65,7 +67,7 @@ function createCard (quantity, bugNumber) {
 			if (i === bugNumber - 1) {
 				cardBack.classList.add('flip_bugcard__back');
 			}
-			let cards = document.querySelectorAll('flip_card');
+			let cards = document.querySelectorAll('.flip_card');
 			cards.forEach(card => card.addEventListener('click', clearField));
 		}
 		card.addEventListener('click', rotate);		

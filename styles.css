@@ -5,9 +5,13 @@ body{
 	font-family: Roboto;
 }
 
-.wrapped{
+.wrapper{
 	margin: 129px 70px 0 103px;
 	position: relative;
+}
+
+.wrapper_active{
+	display: none;
 }
 
 .title{
@@ -106,14 +110,59 @@ body{
 	right: 0;
 }
 
-.wrapped_game {
-	position: relative;
-	background: no-repeat url(images/cards.png);
-	width: 515px;
-	height: 407px;
-	top: 42.5%;	
-	right: 0;
+.game_field {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0;
+	height: 100vh;
 }
+
+.flip_card {
+	position: relative;
+	background-color: transparent;
+	width: 218px;
+	height: 341px;	
+}
+
+.flip_card__inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+	border-radius: 10px;
+}
+
+.flip_card__front, .flip_card__back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	border-radius: 10px;
+}
+
+.flip_card__front {
+	background: no-repeat url('images/front.png');
+}
+
+.flip_card__back {
+	background: no-repeat url('images/back.png');
+}
+
+.flip_bugcard__back {
+	position: absolute;
+	background: no-repeat url('img/bug.svg');
+	background-size: cover;
+	transform: rotateY(180deg);
+}
+
+.rotate {
+	transform: rotateY(180deg);
+}
+
 
 
 

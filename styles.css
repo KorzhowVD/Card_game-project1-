@@ -124,6 +124,7 @@ body{
 	background-color: transparent;
 	width: 218px;
 	height: 341px;	
+	margin-right: 24px;
 }
 
 .flip_card__inner {
@@ -148,13 +149,22 @@ body{
 	background: no-repeat url('images/front.png');
 }
 
+.flip_card__front:hover {
+  will-change: transform;
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+  transform: translateY(-30px) rotateZ(-2deg);
+  transition: transform .8s;
+  transform-style: preserve-3d;
+}
+
 .flip_card__back {
 	background: no-repeat url('images/back.png');
+	transform: rotateY(180deg);
 }
 
 .flip_bugcard__back {
 	position: absolute;
-	background: no-repeat url('img/bug.svg');
+	background: no-repeat url('images/backBUG.png');
 	background-size: cover;
 	transform: rotateY(180deg);
 }

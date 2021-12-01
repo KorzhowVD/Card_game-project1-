@@ -7,7 +7,7 @@ let cloud = document.querySelector('.wrapper')
 // выделение выбранного уровня
 
 let activeLevel = document.querySelectorAll('.level__choose');
-	activeLevel = Array.prototype.slice.call(activeLevel);
+	// activeLevel = Array.prototype.slice.call(activeLevel);
 let flag = false;
 
 activeLevel.forEach((chooseLevel) => {
@@ -34,12 +34,11 @@ function checkLevel () {
 // функция появления и скрытия главного экрана
 
 function clearField () {
-	document.querySelector('.wrapper').style.display = 'block';
 	gameField.style.display = 'none';
-	gameField.className = 'game_field';
+	document.querySelector('.wrapper').style.display = 'block';
 }
 
-// создание одной карты (вместе с переворотом) и очистка поля после двойного нажатия на карту
+// создание карты (вместе с переворотом) и очистка поля после двойного нажатия на карту
 
 function createCard (quantity, bugNumber) {
 	for (let i = 0; i < quantity; i++) {
@@ -59,19 +58,18 @@ function createCard (quantity, bugNumber) {
 
 		cardBack.className = 'flip_card__back';
 		cardInner.append(cardBack);
+		
 
 		function rotate (){
-			cardInner.classList.toogle('rotate');
+			cardInner.classList.toggle('rotate');
 			if (i === bugNumber - 1) {
 				cardBack.classList.add('flip_bugcard__back');
 			}
-
 			let cards = document.querySelectorAll('flip_card');
 			cards.forEach(card => card.addEventListener('click', clearField));
 		}
-
 		card.addEventListener('click', rotate);		
-	}	
+	}
 }
 
 function randomCard (min, max) {
@@ -80,10 +78,10 @@ function randomCard (min, max) {
 }
 
 function startGame () {
-	if (flag = true) {
+	if (flag === true) {
 		cloud.classList.add('wrapper_active');
 		gameField.style.display = 'flex';
-		createCard(checkLevel, randomCard(1, checkLevel));
+		createCard(checkLevel(), randomCard(1, checkLevel()));
     } else {
     	alert('Выберите уровень и нажмите "НАЧАТЬ ИГРУ"');
     }

@@ -26,7 +26,7 @@
 * Использование методов браузерных событий
 * Реализована анимация с помощью JS и CSS
 
-[__Ссылка на GitHub Pages__](https://kateviwe.github.io/russian-travel/)
+[__Ссылка на GitHub Pages__](https://korzhowvd.github.io/Card_game/)
 
 ![Alt text][id]
 
